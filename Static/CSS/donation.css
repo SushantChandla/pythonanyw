@@ -1,0 +1,522 @@
+/* .sections{
+    background-color : black !important;
+    color: white;
+  
+}
+.slides{
+    background-color : black !important;
+    color: white;
+    text-align: center;
+}
+.qrCode{
+    height: 60% !important;
+}
+.section .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: white;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      outline:0;
+}
+.section .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color:  #7B848B;
+      display: block;
+      transition: 0.3s;
+}
+#main {
+      position: relative;
+      top: 0px;
+      transition: margin-left .5s;
+      padding: 16px;
+      background: transparent;
+      color: white;
+}
+
+.section .gradient-button {
+      font-family: "Ubuntu", sans-serif;
+      font-size: 200%;
+      text-align: center;
+      background-color: transparent ;
+      color : white;
+      cursor: pointer;
+      position: relative;
+      top: 0px;
+      float: right;
+      padding: 8px 20px 8px 20px ;
+      text-decoration: none;
+      }
+.openButton{
+    background: transparent;
+    color: white;
+    font-size: 150%;
+    border: none !important;
+}
+
+.firstSection .imageConatiner{
+    width: 40%;
+    float: left;
+}
+
+.firstSection h1{
+    color: white;
+    font-size: 420%;
+    text-align: center;
+}
+
+.firstSection .balanceDiv{
+    width: 14% !important;
+    padding: 5px !important;
+    border-radius: 5%;
+    background-color: grey;
+    text-align: center;
+    float: left;
+    margin: 2% !important;
+}
+
+.donateLinkDiv{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 2%;
+}
+.donateLinkDiv a{
+    color: white;
+    font-size: 200%;
+    text-decoration: none;
+    margin: 2%;
+}
+
+.donateLinkDiv a:hover{
+    color:yellow;
+    font-size: 300%;
+    text-decoration: underline;
+}
+
+.RequestedDonationSlides{
+    background-size: cover;
+}
+
+.requestButton {
+      background-color: orange;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+}
+
+.donateButton {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+}
+
+.typeOfDonation {
+      background-color: #3CBC8D;
+      color: white;
+      width: 25%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+}
+
+.amountOfDonation {
+      background-color: #3CBC8D;
+      color: white;
+      width: 25%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+}
+
+.formInputDiv{
+    text-align: center;
+    padding: 10px;
+    margin: 10px !important;
+}
+
+.formButtonDiv{
+    text-align: center;
+    padding: 10px;
+    margin: 10px !important;
+}
+
+.typeOfDonation{
+    margin: 10px;
+}
+.amountOfDonation{
+    margin: 10px;
+}
+
+.donationSlideHeaderContainer{
+    height: fit-content;
+    width: 33%;
+    text-align: center !important;
+    color: white;
+    position: absolute !important;
+    top: 20px !important;
+}
+
+#firstDonationSlide{
+    background-image: url("../Art/foodgrain.jpg");
+    
+}
+#secondDonationSlide{
+    background-image: url("../Art/safetyitem.jpg");
+}
+#thirdDonationSlide{
+    background-image: url("../Art/medicine.jpg");
+}			
+ */
+
+
+
+
+
+
+
+
+ body{
+     background-color: black;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.sections{
+    background-color : black !important;
+    color: white;
+}
+.slides{
+    background-color : black !important;
+    color: white;
+    text-align: center;
+}
+.qrCode{
+    height: 60% !important;
+}
+
+
+
+  
+  
+    section:nth-last-of-type(2) {
+        background: url('https://unsplash.it/1910/1221?image=626') no-repeat center / cover;
+      }
+  
+  
+
+
+  button:focus {
+    outline:0;
+  }
+
+
+
+
+.section .gradient-button {
+      font-family: "Ubuntu", sans-serif;
+      font-size: 200%;
+      text-align: center;
+      background-color: transparent ;
+      color : white;
+      cursor: pointer;
+      position: absolute;
+      top: 5%;
+      left: 90%;
+      padding: 8px 20px 8px 20px ;
+      text-decoration: none;
+      }
+
+
+.firstSection .imageConatiner{
+    width: 40%;
+    margin-top: 10%;
+    margin-left: 5%;
+    float: left;
+}
+
+.firstSection h1{
+    color: white;
+    font-size: 470%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+}
+
+.firstSection .balanceDiv{
+    width: 12% !important;
+    height: 18%;
+    padding-top: 30px !important;
+    padding-bottom: 8% !important;
+    border-radius: 20%;
+    background-color: #262627;
+    text-align: center;
+    float: left;
+    margin: 4% !important;
+}
+
+#incomeBalanceDiv{
+    position: absolute;
+    top: 40%;
+    left: 62.1%;
+}
+
+#expenditureBalanceDiv{
+    position: absolute;
+    top: 40%;
+    left: 80%;
+}
+
+#remainingBalanceDiv{
+    position: absolute;
+    top: 40%;
+    left: 45%;
+}
+
+.donateLinkDiv{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 2%;
+}
+
+.donateLinkDiv a{
+    color:#FF852E;
+    font-size: 400%;
+    text-decoration: none;
+    margin: 2%;
+    position: absolute;
+    top: 75%;
+    left: 63%;
+}
+
+.balanceDiv h4 {
+    color: #979CA1;
+}
+
+
+.secondSection .balance {
+    width: 80%;
+    height: 90%;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+  }
+  
+  .secondSection .balance h2 {
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    color: #fff;
+    font-size: 50px;
+  }
+  
+  .secondSection .balance p{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    font-size: 20px;
+    color: #fff;
+  }
+ 
+
+  .secondSection .balance .ether {
+    color:#A0B9BF;
+    font-size: 45px;
+    text-decoration: none;
+    position: absolute;
+    top: 65%;
+    left: 8%;
+    background-color: transparent ;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px;
+    padding: 8px 20px 8px 20px ;
+    
+  }
+
+
+  .secondSection  {
+      background-image: url("../Art/eth.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+
+
+
+
+
+
+
+#firstDonationSlide{
+    background-image: url("foodgrain.jpg");
+    
+}
+#secondDonationSlide{
+    background-image: url("safetyitem.jpg");
+}
+#thirdDonationSlide{
+    background-image: url("medicine.jpg");
+}
+
+@media screen and (max-width:600px){
+    .sections{
+        width: 100% !important;
+    }
+
+    .firstSection h1{
+        font-size: 250%;
+        position: absolute;
+        top: 6%;
+        left: 31%;
+        text-align: center;
+    }
+
+    .firstSection .balanceDiv{
+        width: 25% !important;
+        height: 15%;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        float: left;
+        margin: 4% !important;
+    }
+
+    #incomeBalanceDiv{
+        position: absolute;
+        top: 68%;
+        left: 34.1%;
+        
+    }
+
+    #expenditureBalanceDiv{
+        position: absolute;
+        top: 68%;
+        left: 65%;
+    }
+
+    #remainingBalanceDiv{
+        position: absolute;
+        top: 68%;
+        left: 3%;
+    }
+
+
+    .donateLinkDiv a{
+        color:#FF852E;
+        font-size: 250%;
+        text-decoration: none;
+        margin: 2%;
+        position: absolute;
+        top: 90%;
+        left: 36%;
+    }
+   
+
+    
+    .imageConatiner{
+        width: 100% !important;
+        height: 50% !important;
+        position: absolute;
+        top:20%;
+        left: -1%;
+    }
+    .imageConatiner img{
+        width: 100%;
+        height: 100%;
+    }
+
+    
+    .balanceDivContainer{
+        width: 100% !important;
+    }
+    .balanceDiv{
+        width: 30%;
+        margin : 1% !important;
+    }
+    
+    
+    .qrCode{
+        width: 60% !important;
+        height: auto !important;
+    }
+
+    .sections .gradient-button{
+        font-size: 20px;
+        position: absolute;
+        top: 3%;
+        left: 80%;
+    }
+
+    .openbtn {font-size: 18px;
+        font-weight: 100;
+        
+    } 
+
+    .openButton {
+        position: absolute;
+        top: 4%;
+        left: 3%;
+
+    }
+
+
+    .secondSection .balance h2 {
+        position: absolute;
+        top: 25%;
+        left: 15%;
+        color: #fff;
+        font-size: 30px;
+      }
+      
+      .secondSection .balance p{
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        font-size: 12px;
+        color: #fff;
+      }
+     
+    
+      .secondSection .balance .ether {
+    
+        font-size: 25px;
+        position: absolute;
+        top: 65%;
+        left: 8%;
+        color:#A0B9BF;
+      }
+    
+
+      .secondSection  {
+        background-image: url('../Art/eth.jpg');
+        object-fit: cover;
+        width: 250px;
+        height: 250px;
+        background-position: center;
+        
+
+      }
+
+
+
+
+    
+}

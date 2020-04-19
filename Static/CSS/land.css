@@ -1,0 +1,206 @@
+.section #sli1{
+  background-image: url("../Art/lands.png");
+  background-size: cover ;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+
+}
+.section #sli2{
+  background-color: pink;
+  background-size: cover ;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+ 
+}
+.section #sli3{
+  background-color: plum;
+  background-size: cover ;
+  overflow: hidden;
+
+  text-align: center;
+  text-decoration: none;
+  color: white;
+ 
+}
+
+.section{
+  top: -11.4%;
+  font-family: "Ubuntu",sans-serif;
+  cursor: default;
+}
+
+ 
+.section .slide .btn {
+ 
+    font-size: 80px;
+    color: white;
+    opacity: 0.7;
+    text-decoration: none;
+    font-family: "Ubuntu", sans-serif;
+}
+
+
+.section .slide h3 {
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  top: 69%;
+  text-align: center;
+  left: 13.5%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.section .slide p {
+  font-size: 15px ;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  position: absolute;
+  top: 78%;
+  left: 5%;
+}
+
+.section .slide #next h3 {
+    font-size: 30px;
+    color: white;
+    top: 69%;
+    left: 48.5%;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.section .slide #next p {
+  font-size: 15px;
+  color: white;
+  top: 78%;
+  left: 39%;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.section .slide #pro h3 {
+font-size: 30px;
+color: white;
+top: 69%;
+left: 82%;
+font-family: "Ubuntu", sans-serif;
+}
+
+.section .slide #pro p {
+font-size: 15px;
+color: white;
+top: 78%;
+left: 71%;
+font-family: "Ubuntu", sans-serif;
+}
+
+.openbtn{
+  background-color: transparent;
+  color: #fff;
+  font-size: 27px;
+  margin-top: 13px;
+  font-weight: 600;
+}
+.openbtn:hover{
+  color: #fff;
+}
+
+
+
+
+
+
+
+button:focus {
+  outline:0;
+}
+
+ 
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/*@media screen and (max-height: 450px) {
+  .section .slide .sidebar {padding-top: 15px;}
+  .section .slide .sidebar a {font-size: 18px;}
+}
+
+@media screen and (max-width: 450px){
+  .openbtn{font-size: 12px;}
+} */
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .section .slide .sidebar {padding-top: 15px;}
+    .section .slide .sidebar a {font-size: 18px;}
+  }
+  
+  @media screen and (max-width: 450px){
+    .openbtn{font-size: 15px;}
+  }
+
+  @media screen and (max-width: 450px){
+    .section #sli1 {
+              background-size: 190% 120%;
+              background-position: center;
+    }
+
+    .section .slide .btn {
+      font-size: 40px;
+      
+    }
+
+    .gradient-button{
+      font-size: 15px;
+      width: 60px;
+      margin-top: 3%;
+    }
+
+    .section .slide h3{
+      font-size: 30px;
+      position: absolute;
+      left: 37%;
+      top: 62%;
+    }
+
+    .section .slide p {
+      font-size: 10px;
+      position: absolute;
+      top: 73%;
+      left: 34%;
+    }
+
+    .section .slide #next h3 {
+      font-size: 30px;
+      position: absolute;
+      top: 60%;
+      text-align: center;
+      left: 8%;
+    }
+  
+  .section .slide #next p {
+    font-size: 10px ;
+    position: absolute;
+    top: 73%;
+    left: 2%;
+  }
+
+  .section .slide #pro h3 {
+    font-size: 30px;
+    color: white;
+    top: 60%;
+    left: 77%;
+    font-family: "Ubuntu", sans-serif;
+    }
+    
+    .section .slide #pro p {
+    font-size: 10px;
+    color: white;
+    top: 70%;
+    left: 69%;
+    font-family: "Ubuntu", sans-serif;
+    }
+
+   
+
+}

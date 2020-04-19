@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head_block %}
+    
+    <title>Locate</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/map.css' %}" />
+{% endblock %}
+
+{% block body_block %}
+<div id="map" style="width: device-width;height: 100vh; top: -55px;position: relative;">
+    </div>
+    {% comment %} <div id="profilebtn">
+
+        <img src={% static 'Art/profile.svg' %} class="profilebtn"></img>
+        <a class="donationbtn" href="{% url 'shop:shop' %}"><i class="fas fa-hand-holding-medical"></i>DONATE</a>
+        <a class="shop" href="{% url 'shop:donation' %}"><i class="fas fa-shopping-cart"></i>BUY</a>
+        <button class="back"></button>
+
+    </div> {% endcomment %}
+   <script type="text/javascript">
+        mapboxgl.accessToken = 'pk.eyJ1IjoibmlzaGFudC1jaGFuZGxhIiwiYSI6ImNrOGs4eWw3djBrbjEzZHFob3hiOHp1bDgifQ.l4Vjz4vaAKos0VKLAEDKxg';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10',
+        center: [78.9, 20.59], // starting position
+        zoom: 5,
+    });
+    </script>
+
+    <script src="{% static 'JS/Map.js' %}">
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    {% if  data %}
+         <script type="text/javascript">
+           //     placeCircle(20.5,78.8,India,this is a contry,12)
+            {% for item in data %}
+                {% if item.District %}
+                    placeCircle({{ item.lan }},{{ item.lat }},"{{ item.State }}","{{ item.District }}",{{ item.corona }},{{ item.death }})
+                {%else %}
+                    placeCircle({{ item.lan }},{{ item.lat }},"{{ item.State }}","unknown",{{ item.corona }},{{ item.death }})
+                {% endif %}
+           {% endfor %}
+        </script>
+    {% endif %}
+{% endblock  %}

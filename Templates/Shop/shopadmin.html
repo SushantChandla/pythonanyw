@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head_block %}
+    <title>Shop Admin</title>
+    <link rel="stylesheet"  href={% static 'CSS/shopadmin.css' %}>
+{% endblock %}
+
+{% block body_block %}
+
+                <div id="shopProfileSidebar" class="shopProfileSidebar" style="width: 0">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeProfile()">&times;</a>
+                    <div class="profileImagediv" id="profileImagediv">
+                    	<img src="{{ shop.shop_pic.url }}">
+                    </div>
+                    <div class="shopName ProfileDivs" id="shopNameDiv">
+                		<div class="profileDivName">SHOP NAME</div>
+                		<input class="profileValue" type="text" id="shopName" value="Ganesh Store" readOnly="true">	
+                	</div>
+                	<div class="shopContactNumber ProfileDivs" id="shopContactNumberDiv">
+                		<div class="profileDivName">SHOP CONTACT NUMBER</div>
+                		<input class="profileValue" type="number" id="shopContactNumber" value="{{ shop.phone_number }}" readOnly="true">	
+                	</div>
+                	<div class="shopAddress ProfileDivs" id="shopaddressDiv">
+                		<div class="profileDivName">ADDRESS</div>
+                		<input class="profileValue" type="text" id="shopAddress" value="{{ shop.address }}" readOnly="true">
+                	</div>
+                </div>
+                 <div id="main">
+                    <button class="gradient-button" onclick="openProfile()">SHOP PROFILE</button>
+                </div>
+
+
+                <div class="allOrderContainer">
+
+
+                    {% for o  in orders %}	
+                	<div class="orderContainer ">
+                		<div class="customerContactNumber orderDivs" id="customerContactNumber1">
+                			<div class="divName">CUSTOMER CONTACT NO.</div>
+                			{{ o.phone_number }}
+                		</div>
+                		<div class="customerName orderDivs" id="customerName1">
+                			<div class="divName">CUSTOMER NAME</div>
+                			{{ o.username }}
+                		</div>
+                		<div class="customerAddress orderDivs" id="customerAddress1">
+                			<div class="divName">CUSTOMER ADDRESS</div>
+                			{{ o.address }}
+                		</div>
+                		<div class="customerOrder orderDivs" id="customerOrder1">
+                			<div class="divName">CUSTOMER ORDERS</div>
+                			{{ o.order_details }}
+                		</div>
+                		{% comment %} <div class="acceptOrderButtonDiv orderDivs">
+						
+                			<button type = "submit"  class = "acceptOrderButton" id ="acceptOrderButton1">Mark Completed</button>
+                		</div> {% endcomment %}
+                	</div>
+                    {% endfor %}
+
+                	
+
+                </div>
+
+                
+
+        <script type="text/javascript">
+
+
+			function openProfile() {
+	            if (document.getElementById("shopProfileSidebar").style.width == "400px") {
+	                closeProfile();
+	            } else {
+	                document.getElementById("shopProfileSidebar").style.width = "400px";
+	                document.getElementById("main").style.marginRight = "400px";
+	            }
+
+	        }
+
+	        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+	        function closeProfile() {
+	            document.getElementById("shopProfileSidebar").style.width = "0px";
+	            document.getElementById("main").style.marginRight = "0px";
+	        }
+
+	        function editProfile(){
+	        	document.getElementById("shopName").readOnly = false;
+	        	document.getElementById("shopAddress").readOnly = false;
+	        	document.getElementById("shopContactNumber").readOnly = false;
+	        	document.getElementById("shopSaveDiv").style.display = 'block';
+	        	document.getElementById("shopEditDiv").style.display = 'none';
+	        }
+
+	        function saveProfile(){
+	        	document.getElementById("shopName").readOnly = true;
+	        	document.getElementById("shopAddress").readOnly = true;
+	        	document.getElementById("shopContactNumber").readOnly = true;
+	        	document.getElementById("shopSaveDiv").style.display = 'none';
+	        	document.getElementById("shopEditDiv").style.display = 'block';
+	        }
+
+        </script>
+
+{% endblock %}

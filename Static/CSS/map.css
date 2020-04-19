@@ -1,0 +1,91 @@
+
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  div{
+    font-family: "Ubuntu", sans-serif;
+  
+  }
+  
+ 
+  #profilebtn{
+    position: fixed;
+    right: 0px;
+    width: 500px;
+    height: 60px;
+    top: 10%;
+  }
+  .back{
+    position: absolute;
+    width: 390px;
+    right: 0px;
+    height: 45px;
+    top:9px;
+    background-color: #fff;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    cursor: default;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: none;
+    margin-right: 9px;
+    border-radius: 5px;
+    z-index: 2;
+  }
+  .shop{
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    right: 310px;
+    font-family: "Ubuntu", sans-serif;
+    top:9px;
+    background-color: #fff;
+    color: #000000a9;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: none;
+    border-radius: 20px;
+    margin-left: 10px;
+    z-index: 3;
+  }
+  
+  .profilebtn {
+    width: 37px;
+    height: 37px;
+    z-index: 3;
+    background-color: white;
+    border-radius: 30px;
+    padding: 7px;
+    align-content: center;
+    position: absolute;
+    right: 11px;
+    top: 11px;
+  }
+  .donationbtn{
+    font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+      right: 125px;
+      top:9px;
+      background-color: #fff;
+      color: #000000a9;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      font-family: "Ubuntu", sans-serif;
+      padding-left: 14px;
+      padding-right: 14px;
+      border: none;
+      border-radius: 20px;
+      margin-left: 10px;
+      z-index: 3;
+  
+  }
+  .donationbtn :hover{
+    color: black;
+  }
+  .shop :hover{
+    color: black;
+  } 

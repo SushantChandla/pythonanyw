@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block head_block %}
+<title>shop</title>
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/shop.css' %}">
+
+
+ {% endblock  %}
+ {% block body_block %}
+	<div id="fullpage">
+			<div class="section sections firstSection">
+                <div id="orderSidebar" class="orderSidebar" style="width: 0;z-index:7;">
+                	<a href="javascript:void(0)" class="closebtn" onclick="closeOrder()">&times;</a>
+                		<form class="orderForm" method="POST"  action="{% url 'shop:shop' %}">
+							{% csrf_token %}
+                			<label class="label" for="orderTextarea">your orders</label>
+							<textarea type ="text"class="orderTextarea orderInput" id = "orderTextarea" placeholder="write your orders here" name="order" required ></textarea>
+							<label class="label" for="shopContact">shop contact no.</label>
+							<input class="orderInput" id="shomecontactnumber"  type="number" value="" id="shopContact" name="shopnumber" readonly>
+							<label class="label" for="userContact">your contact no.</label>
+							<input class="orderInput" type="number" name="userContact" id="userContact" placeholder="your phone no." required>
+							<label class="label" for="userAddress">your Address</label>
+							<input type="hidden" name ="username" value="{{ user.username }}" >
+							<textarea name="userAddress" class="userAddressTextarea orderInput" id="userAddress" placeholder="your Adress"></textarea>
+							<button type="submit" class="orderSubmitButton" id="orderSubmitButton">SUBMIT</button>
+                		</form>
+                </div>
+
+                <div class="searchLocationDiv">
+					<form class="orderForm" method="POST"  action="{% url 'shop:shop' %}">
+					{% csrf_token %}
+                	<input type="text" class="searchLocation" id = "searchLocation" name="q" placeholder="Search Location">
+					<button type="submit" class="orderSubmitButton" style="max-width:10%;" id="orderSubmitButton">Search</button>
+					</form>
+                </div>
+
+
+                <div class="shopImageContainerDiv">
+
+                	<div class="shopImageHeader"> 
+                		<b>SHOPS</b>
+                	</div>
+
+					{% if shops %}
+
+					{% for s in shops %}
+                	<div class="imageContainers" 
+					{% if user.is_authenticated %}
+					onclick="order({{ s.phone_number }})" 
+					{% else %}
+					onclick='showtoast()'
+					{% endif %}
+					>
+                			<input type="image" class="shopImages" id="imageShop1" src="{{ s.shop_pic.url }}" >
+                		<div class="shopNames" id = "shopName1">
+                			<p>{{ s.user.username }}</p>
+                		</div>
+                		<div class="shopAddress" id="shopaddress1">
+                			<p>{{ s.address }}</p>
+                		</div>
+                		<div class="contactNumber" id="contactNumber1">
+                			{{ s.phone_number }}
+                		</div>
+                	</div>
+					{% endfor %}
+					{% endif  %}
+
+                </div>
+
+			</div>
+
+		</div>
+
+
+
+
+
+		<div class="toast" data-autohide="true" style="position: fixed; top: 50%; left: 40%;" >
+    <div class="toast-header">
+      <strong class="mr-auto text-primary">Log IN Required</strong>
+      <small class="text-muted"></small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+    </div>
+    <div class="toast-body" style="background-color: white; color: black;">
+      You have to login to order stuff
+	</div>
+	
+
+
+	<div class="toastorder" data-autohide="false" style="position: fixed; top: 50%; left: 40%;" >
+		<div class="toast-header">
+		  <strong class="mr-auto text-primary">Order Placed</strong>
+		  <small class="text-muted"></small>
+		  <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+		</div>
+		<div class="toast-body" style="background-color: white; color: black;">
+		  Your order was placed .Shopkeeper will deliver Your order Soon.
+		</div>
+
+	
+
+
+
+  </div>
+
+		<script>
+			function showorderplaced(){
+				$(document).ready(function(){
+  					$('.toastorder').toast('show');
+				});
+			}
+
+			function showtoast(){
+				$('.toast').toast('show');
+			}
+
+	       function order( contactNumber) {
+	            if (document.getElementById("orderSidebar").style.width == "300px") {
+	                closeOrder();
+	            } else {
+	                document.getElementById("orderSidebar").style.width = "300px";
+					document.getElementById("shomecontactnumber").value=contactNumber
+				}
+
+	        }
+	        function closeOrder() {
+	            document.getElementById("orderSidebar").style.width = "0px";
+	        }
+		</script>
+
+		{% if orderplaced %}
+		<script>showorderplaced();</script>
+		{% endif %}
+
+
+ {% endblock  %}

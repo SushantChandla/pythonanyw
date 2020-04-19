@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var x = "200px";
+        const mq = window.matchMedia("(min-width:450px)")
+        if (mq.matches) {
+            x = "250px"
+        }
+
+        function openNav() {
+            if (document.getElementById("mySidebar").style.width == x) {
+                closeNav();
+            } else {
+                document.getElementById("mySidebar").style.width = x;
+                document.getElementById("main").style.marginLeft = x;
+            }
+
+        }
+
+        /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0px";
+            document.getElementById("main").style.marginLeft = "0px";
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/base.css' %}" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+
+
+
+    {% block head_block %}
+    {% endblock %} 
+
+</head>
+
+<body>
+    <div id="mySidebar" class="sidebar" style="z-index:5;">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="{% url 'shop:index' %}">Dashboard</a>
+        <a href="{% url 'map:Home' %}">Locate</a>
+        <a href="{% url 'shop:shop' %}">Shop</a>
+        <a href="{% url 'shop:donation' %}">Donation</a>
+        {% comment %} <a href="#">Contact</a> {% endcomment %}
+    </div>
+    <div id="main" style="position: relative; top: 0px;z-index:5;">
+        <button class="openbtn" onclick="openNav()">&#9776; CORONA HELP</button>
+        </div>
+    {% if user.is_authenticated  %}   
+          <div class="registerbtn" style="position: relative;z-index: 6;top: -8%;right: 0px;" >
+            <a class="gradient-b" href=""><b>{{ user.username }}</b></a>
+            <div class="dropdown">
+            <img class="gradient-bi" src={% static 'Art/profile.svg' %} onclick="dropdown()"></img>
+              <div class="dropdown-content">
+                <a href="{% url 'shop:logout' %}">LogOut</a>
+                {% if shopkeper %}
+                    <a href="{% url 'shop:shopadmin' %}">Shop Admin</a>
+                {% endif %}
+                    </div>
+                </div>
+        </div>
+    {% else %}
+    {% if  login %}
+
+    {% else %}
+    <div class="registerbtn" style="position: fixed;z-index: 6;top: 1.9%;right: 0px;" >
+        <a class="gradient-button" href="{% url 'shop:userregister' %}"><b>Register</b></a>
+        </div> 
+    {% endif %}
+
+    {% endif %}
+   
+    {% block body_block %}
+    {% endblock %}
+    
+
+</body>
+
+</html>

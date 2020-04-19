@@ -1,0 +1,281 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head_block %}
+	<title>Donation</title>
+	<link rel="stylesheet"  href={% static 'CSS/donation.css' %}>
+	<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.css">
+{% endblock  %}
+
+{% block body_block %}
+{% comment %} 
+		<div id="fullpage">
+
+			<div class="section sections firstSection" style="top: -12.2%;z-index: 2;">
+
+                <div class = "imageConatiner">
+                	<img src="coronaDonations.svg">
+                </div>
+                <div>
+                	<h1>PM CARES FUNDS</h1>
+                </div>
+                <div class = "balanceDivContainer">
+                	<div class = "balanceDiv" id = "incomeBalanceDiv">
+	                	<h4>Donation collected</h4>
+	                	<span class = "balance" id = "incomeBalance">140.38</span>
+	                	<span class= "crore">Cr</span>
+	                </div>
+	                <div class = "balanceDiv" id = "expenditureBalanceDiv">
+	                	<h4>Total Expenditure</h4>
+	                	<span class = "balance" id = "expenditureBalance">140.38</span>
+	                	<span class= "crore">Cr</span>
+	                </div>
+	                <div class = "balanceDiv" id = "remainingBalanceDiv">
+	                	<h4>Remaining Balance</h4>
+	                	<span class = "balance" id = "remainingBalance">140.38</span>
+	                	<span class= "crore">Cr</span>
+	                </div>
+                </div>
+                <div class="donateLinkDiv">
+                	<a href="#thirdPage"><b>Donate</b></a>
+                </div>
+			</div>
+
+			<div class="section sections secondSection">
+				<div class="slide RequestedDonationSlides" id ="firstDonationSlide" data-anchor="slide1">
+					<div class = "donationSlideHeaderContainer">
+						<span class = "donationSlideHeader"><h1>FOOD GRAINS</h1></span>
+						<span class = "donationSlideSubHeader"><h2>Amount Requested Worth</h2></span>
+						<span class = "donationSlideSubHeader"><h3>Rs. <span id = "foodgrainAmount">8,56,789</span></h3></span>
+					</div>
+					<div class = "formDiv">
+						<form>
+							<div class = "formInputDiv">
+								<div class = "label">								
+									<label  for="typeFoodgrain">Type of foodgrain</label>
+								</div>
+								<input type="text" class="typeOfDonation" id = "typeFoodgrain" placeholder="Type of foodgrain e.g. rice , wheat,etc">
+								<div class = "label">
+									<label class = "label" for="amountFoodgrain">amount of foodgrain</label>
+								</div>
+								<input type ="number"class="amountOfDonation" id = "amountFoodgrain" placeholder="Amount of foodgrain in kg">
+							</div>
+							<div class = "formButtonDiv">
+								<button type = "submit" class = "requestButton" id = "buttonRequestFoodgrain">Request Donation</button>
+								<button type = "submit" class = "donateButton" id = "buttonDonateFoodgrain">Donate</button>
+							</div>
+						</form>
+					</div>
+					
+				</div>
+				<div class="slide RequestedDonationSlides" id ="secondDonationSlide" data-anchor="slide2">
+					<div class = "donationSlideHeaderContainer">
+						<span class = "donationSlideHeader"><h1>SAFETY ITEMS</h1></span>
+						<span class = "donationSlideSubHeader"><h2>Amount Requested Worth</h2></span>
+						<span class = "donationSlideSubHeader"><h3>Rs. <span id = "safetyitemAmount">8,56,789</span></h3></span>
+					</div>
+					<div class = "formDiv">
+						<form>
+							<div class = "formInputDiv">
+								<label for="typeSafetyitem">Type of safety item</label>
+								<input type="text" class="typeOfDonation" id = "typeSafetyitem" placeholder="Type of safety item e.g. facemask , sanitizer,etc">
+								<label for="amountSafetyitem">amount of foodgrain</label>
+								<input type ="number"class="amountOfDonation" id = "amountSafetyitem" placeholder="Amount of Safety item in numbers">
+							</div>
+							<div class = "formButtonDiv">
+								<button type = "submit" class = "requestButton" id = "buttonRequestFoodgrain">Request Donation</button>
+								<button type = "submit" class = "donateButton" id = "buttonDonateFoodgrain">Donate</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="slide RequestedDonationSlides" id ="thirdDonationSlide" data-anchor="slide3">
+					<div class = "donationSlideHeaderContainer">
+						<span class = "donationSlideHeader"><h1>MEDICINES</h1></span>
+						<span class = "donationSlideSubHeader"><h2>Amount Requested Worth</h2></span>
+						<span class = "donationSlideSubHeader"><h3>Rs. <span id = "medicineAmount">8,56,789</span></h3></span>
+					</div>
+					<div class = "formDiv">
+						<form>
+							<div class = "formInputDiv">
+								<label for="typeMedicine">Type of medicine/problem</label>
+								<input type="text" class="typeOfDonation" id = "typeMedicine" placeholder="Type of medicine or problem suffering from">
+								<label for="amountMedicine">amount of medicine</label>
+								<input type ="number"class="amountOfDonation" id = "amountMedicine" placeholder="Amount of medicine in number">
+							</div>
+							<div class = "formButtonDiv">
+								<button type = "submit" class = "requestButton" id = "buttonRequestFoodgrain">Request Donation</button>
+								<button type = "submit" class = "donateButton" id = "buttonDonateFoodgrain">Donate</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="section sections thirdSection">
+				<div class="slide slides" id ="firstSlide" data-anchor="slide1">
+					<h1>Scan the QR code to pay for PM Cares Fund.</h1>
+					<img class = "qrCode" src="pmCaresQR.png">
+				</div>
+				<div class="slide slides" id ="secondSlide" data-anchor="slide2">
+					<h1>Scan the QR code to pay for PM Relief Fund.</h1>
+					<img class ="qrCode" src="pmReliefFundQR.png">
+				</div>
+				<div class="slide slides" id ="thirdSlide" data-anchor="slide3">
+					<h1>Scan the QR code to pay for CM Relief Fund.</h1>
+					<img id="stateQR" class ="qrCode" src="..." alt="Sorry Your State doesnot accept donation by UPI">
+				</div>
+			</div>
+
+		</div>
+
+		<script  src = "https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js"></script>
+		<script>
+			new fullpage('#fullpage', {
+				//options here
+				autoScrolling:true,
+				scrollHorizontally: true,
+				anchors:['firstPage', 'secondPage', 'thirdPage']
+			});
+		</script>
+		<script type="text/javascript">
+			var dict = {
+				"Andhra Pradesh" : "AndhraPradeshQR.png",
+				"Assam" : "AssamQR.png",
+				"Bihar" : "BiharQR.png",
+				"Delhi" : "DelhiQR.png",
+				"Gujarat" : "GujaratQR.png",
+				"Haryana" : "HaryanaQR.png",
+				"Karnataka" : "KarnatakaQR.png",
+				"Kerala" : "KeralaQR.png",
+				"Madhya Pradesh" : "MadhyaPradeshQR.png",
+				"Maharashtra" : "MaharashtraQR.png",
+				"Meghalaya" : "MeghalayaQR.png",
+				"Mizoram" : "MizoramQR.png",
+				"Punjab" : "PunjabQR.png",
+				"Rajsthan" : "RajsthanQR.png",
+				"Tamil Nadu" : "TamilNaduQR.png",
+				"Telangana" : "TelanganaQR.png",
+				"West Bengal" : "WestBengalQR.png",
+			};
+
+			var locationState;
+			locationState = "Madhya Pradesh";
+			document.getElementById("stateQR").src = dict[locationState];
+		</script> {% endcomment %}
+
+
+
+
+
+
+
+
+
+<div id="fullpage"  style="top: -8.6%;z-index: 2;">
+
+			<div class="section sections firstSection">
+				
+				
+
+                <div class = "imageConatiner">
+                	<img src="{% static 'Art/coronaDonations.svg'%}">
+                </div>
+                <div>
+                	<h1>PM Relief <br>Fund</h1>
+                </div>
+                <div class = "balanceDivContainer">
+                	<div class = "balanceDiv" id = "incomeBalanceDiv">
+	                	<h4>Donation collected</h4>
+	                	<span class = "balance" id = "incomeBalance">140.38</span>
+	                	<span class= "crore">Cr</span>
+	                </div>
+	                <div class = "balanceDiv" id = "expenditureBalanceDiv">
+	                	<h4>Total Expenditure</h4>
+	                	<span class = "balance" id = "expenditureBalance">140.38</span>
+	                	<span class= "crore">Cr</span>
+	                </div>
+	                <div class = "balanceDiv" id = "remainingBalanceDiv">
+	                	<h4>Remaining Balance</h4>
+	                	<span class = "balance" id = "remainingBalance">140.38</span>
+	                	<span class= "crore">Cr</span>
+	                </div>
+                </div>
+                <div class="donateLinkDiv">
+                	<a href="#secondPage"><b>Donate</b></a>
+                </div>
+			</div>
+
+			<div class="section sections secondSection" style=" background-image:{% static 'Art/eth.jpg' %}">
+
+			        
+				
+					 <div class="balance">
+                        
+                        <h2>Donate By Our Decentralised <br>System </h2>
+
+                        <p>
+                             This eliminates possibilities of fraud, corruption and<br> makes the network
+							  tamper-proof. The whole platform<br> is decentralized, which means there is
+							   no possible<br> single point of failure. 
+                          
+                        </p>    
+
+                         <a class="ether" href="ether.html"><b>Donate With Ether</b></a>
+                        
+                    </div>
+   
+			</div>
+
+			<div class="section sections thirdSection">
+				<div class="slide slides" id ="firstSlide" data-anchor="slide1">
+					<h1>Scan the QR code to pay for PM Cares Fund.</h1>
+					<img class = "qrCode" src="{% static 'Art/pmCaresQR.png' %}">
+				</div>
+				<div class="slide slides" id ="secondSlide" data-anchor="slide2">
+					<h1>Scan the QR code to pay for PM Relief Fund.</h1>
+					<img class ="qrCode" src="{% static 'Art/pmReliefFundQR.png' %}">
+				</div>
+				{% comment %} <div class="slide slides" id ="thirdSlide" data-anchor="slide3">
+					<h1>Scan the QR code to pay for CM Relief Fund.</h1>
+					<img id="stateQR" class ="qrCode" src="..." alt="Sorry Your State doesnot accept donation by UPI">
+				</div> {% endcomment %}
+			</div>
+
+		</div>
+
+		<script  src = "https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.min.js"></script>
+		<script>
+			new fullpage('#fullpage', {
+				autoScrolling:true,
+				scrollHorizontally: true,
+				anchors:['firstPage', 'secondPage', 'thirdPage']
+			});
+
+		</script>
+		<script type="text/javascript">
+			var dict = {
+				"Andhra Pradesh" : "AndhraPradeshQR.png",
+				"Assam" : "AssamQR.png",
+				"Bihar" : "BiharQR.png",
+				"Delhi" : "DelhiQR.png",
+				"Gujarat" : "GujaratQR.png",
+				"Haryana" : "HaryanaQR.png",
+				"Karnataka" : "KarnatakaQR.png",
+				"Kerala" : "KeralaQR.png",
+				"Madhya Pradesh" : "MadhyaPradeshQR.png",
+				"Maharashtra" : "MaharashtraQR.png",
+				"Meghalaya" : "MeghalayaQR.png",
+				"Mizoram" : "MizoramQR.png",
+				"Punjab" : "PunjabQR.png",
+				"Rajsthan" : "RajsthanQR.png",
+				"Tamil Nadu" : "TamilNaduQR.png",
+				"Telangana" : "TelanganaQR.png",
+				"West Bengal" : "WestBengalQR.png",
+			};
+
+			var locationState;
+			locationState = "Madhya Pradesh";
+			document.getElementById("stateQR").src = dict[locationState];
+		</script>
+
+{% endblock  %}

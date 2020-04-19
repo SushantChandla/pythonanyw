@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_block %}
+
+  
+<div class="container" style=" max-width:50%;position: fixed;
+bottom: 0%;
+top:0%;
+left:0%;
+background-color: black;">
+  <img src="{% static '' %}" alt="">
+</div>
+
+
+
+  <div class="container" style="margin-left: 40%; max-width:35%;position: fixed;
+  right: 5%;
+  top:30%;">
+      <h1>Login</h1>
+        <form method="post" action="{% url 'shop:login' %}">
+          {% csrf_token %}
+          <input style="margin-top: 5%; width: 100%;border-radius: 3px;" type="text" name="username" placeholder="Username">
+          <p></p>
+         <input style="width: 100%;border-radius: 3px; " type="password" name="password" placeholder="Password">
+          <p></p>
+          <input style="position: relative; left: 25%;
+          padding: 4px; border-radius: 9px;
+          width: 50%;
+        background-color: black;
+        color: white;
+        border: none;" type="submit" name="" value="Login">
+        </form>
+
+        <p style="position: relative;left:11%; margin-top: 3%;" >Create an Account? <a href='{% url 'shop:login' %}'>here</a> </p>
+        <p style=" position:  relative;left:11%;" > Register as a Shop owner <a href='{% url 'shop:register' %}'>Here</a> </p>
+
+  </div>
+{% endblock %}

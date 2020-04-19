@@ -1,0 +1,174 @@
+body{
+    background-color: black;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: white;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      outline:0;
+}
+
+.shopProfileSidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: white;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      outline:0;
+}
+
+.sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color:  #7B848B;
+      display: block;
+      transition: 0.3s;
+}
+.shopProfileSidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color:  #7B848B;
+      display: block;
+}
+
+#main {
+      position: relative;
+      top: 0px;
+      transition: margin-left .5s;
+      padding: 16px;
+      background: transparent;
+      color: white;
+}
+
+.gradient-button {
+      font-family: "Ubuntu", sans-serif;
+      font-size: 100%;
+      text-align: center;
+      background-color: transparent ;
+      color : white;
+      cursor: pointer;
+      position: relative;
+      top: 0px;
+      float: right;
+      padding: 8px 20px 8px 20px ;
+      text-decoration: none;
+      }
+.openButton{
+    background: transparent;
+    color: white;
+    font-size: 150%;
+    border: none !important;
+}
+.allOrderContainer{
+    width: 100%;
+    margin-top: 5%;
+}
+.orderContainer{
+    width: 70%;
+    margin: 50px auto;
+}
+.orderDivs{
+    width: 100%;
+    border: solid white 1px;
+    padding: 5px;
+    padding-bottom: 5px !important;
+}
+.divName{
+    width: 30%;
+    height: 100%;
+    font-size: 120%;
+    float: left;
+}
+.shopkeeperNoteTextarea{
+    width: 65%;
+    resize: none;
+}
+.acceptOrderButtonDiv{
+    text-align: center;
+}
+.acceptOrderButton {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+}
+.profileImagediv{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border: solid grey 1px;
+    border-radius: 50%;
+}
+.profileImagediv img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.ProfileDivs{
+    width: 90%;
+    margin: 2px auto;
+    padding: 2px;
+    color: black;
+    border: solid grey 1px;
+}
+.profileDivName{
+    width: 90%;
+    font-size: 90%;
+    padding: 3px;
+}
+.profileValue{
+    width: 90%;
+    font-size: 110%;
+    padding: 3px;
+}
+.shopEditDiv{
+    text-align: center;
+    border: none !important;
+}
+.shopEditButton{
+    background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 0 auto;
+}
+.shopSaveButton{
+    background-color: orange;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 0 auto;
+}
+#shopSaveDiv{
+    display: none;
+}
